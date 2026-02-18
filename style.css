@@ -22,6 +22,7 @@ body {
   background: var(--bg);
   color: var(--ink);
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 
@@ -69,6 +70,14 @@ body {
 .nav-links a:hover {
   background: rgba(255, 255, 255, 0.04);
   color: var(--accent);
+}
+
+.nav-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1100;
+  backdrop-filter: blur(2px);
 }
 
 
@@ -358,9 +367,28 @@ body {
   box-shadow: 0 12px 28px rgba(13, 27, 42, 0.18);
 }
 
+.footer {
+  background: var(--card);
+  padding: 40px 20px;
+  text-align: center;
+  color: var(--muted);
+}
+
 
 
 @media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-content p {
+    font-size: 0.95rem;
+  }
+
+  .project-container {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
 
   .contact-card {
     flex-direction: column;
@@ -375,6 +403,7 @@ body {
 
   .contact-socials {
     align-items: center;
+    width: 100%;
   }
 
   .contact-link {
