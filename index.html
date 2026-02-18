@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aaryan Pokhrel</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">nexaa</div>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact-section">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    
+    <header id="home" class="hero">
+        <div class="hero-content">
+            <h1>Hello, I'm <span>Aaryan</span></h1>
+            <p>Professional Web Developer | Graphic Designer | Video Editor</p>
+            <a href="#about" class="btn">Learn More</a>
+        </div>
+
+        
+        <div class="shape shape1"></div>
+        <div class="shape shape2"></div>
+    </header>
+
+    
+    <section id="about" class="about">
+        <h2>About Me</h2>
+        <p>
+           <p>Hi, I’m Aaryan Pokhrel, a 17-year-old tech enthusiast from Nepal. I’m a self-taught Web Developer, Graphic Designer, and Video Editor passionate about turning ideas into impactful digital experiences.</p><br>
+
+            <p>I enjoy building demo websites and recreating popular platforms to sharpen my development skills. As a designer, I love transforming concepts into compelling visuals using Photoshop. My creative journey started with editing AMVs, which evolved into producing professional-quality videos and dynamic edits from raw footage.</p><br>
+
+            <p>I’m constantly learning, experimenting, and pushing my creativity to bring ideas to life through code, design, and motion.</p>
+        </p>
+    </section>
+
+<section id="projects" class="projects">
+    <h2>Achievements</h2>
+
+    <div class="project-container">
+
+        <div class="project-card">
+            <h3>20+</h3>
+            <p>Paid-Projects Delivered</p>
+        </div>
+
+        <div class="project-card">
+            <h3>10+</h3>
+            <p>Websites Deployed</p>
+        </div>
+
+        <div class="project-card">
+            <h3>50+</h3>
+            <p>Creatives, Graphics and Banners Made</p>
+        </div>
+
+    </div>
+</section>
+
+
+        <section id="contact-section" class="contact-section">
+        <h2>Contact Me</h2>
+        <p style="text-align:center;margin-top:6px;">You can reach me through email or social platforms below.</p>
+
+        <div class="contact-card">
+            <div class="contact-info">
+                <p><strong>Email:</strong> aaryanpokhrelll@gmail.com</p>
+                <p><strong>Phone:</strong> +977 9767003477</p>
+                <p><strong>Location:</strong> Butwal, Nepal</p>
+            </div>
+
+            <div class="contact-socials">
+                <a href="https://www.instagram.com/nexaaop/" target="_blank" class="contact-link">Instagram</a>
+                <a href="https://github.com/aaryanxxi" target="_blank" class="contact-link">Github</a>
+                <a href="https://www.tiktok.com/@aaryan.nexaa69?is_from_webapp=1&sender_device=pc" target="_blank" class="contact-link">Tiktok</a>
+            </div>
+        </div>
+
+        </section>
+
+
+    <footer id="contact" class="footer">
+        <p>© 2025 Aaryan Pokhrel | All Rights Reserved</p>
+    </footer>
+
+</body>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const toggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    let backdrop = null;
+
+    function openMenu() {
+        navLinks.classList.add('open');
+        toggle.classList.add('open');
+        toggle.setAttribute('aria-expanded', 'true');
+        backdrop = document.createElement('div');
+        backdrop.className = 'nav-backdrop';
+        document.body.appendChild(backdrop);
+        document.body.style.overflow = 'hidden';
+        backdrop.addEventListener('click', closeMenu);
+    }
+
+    function closeMenu() {
+        navLinks.classList.remove('open');
+        toggle.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+        if (backdrop) {
+            backdrop.removeEventListener('click', closeMenu);
+            document.body.removeChild(backdrop);
+            backdrop = null;
+        }
+        document.body.style.overflow = '';
+    }
+
+    toggle.addEventListener('click', () => {
+        if (navLinks.classList.contains('open')) closeMenu();
+        else openMenu();
+    });
+
+    document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', closeMenu));
+});
+</script>
+</html>
+
+
+
+
+
+
+
